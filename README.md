@@ -1,3 +1,8 @@
+The main objective of this Project is to identify variables which are significant in predicting demand of Bike Rentals using Regression Analysis in R. 
+This project allows to confidently determine which factors matter most, which factors can be ignored, and how these factors influence each other which helps in taking better business decisions in predicting the future demand.
+The dataset has been taken from https://www.kaggle.com/c/bike-sharing-demand/overview/description
+
+
 ### Importing data
 data1=read.csv("C:/Users/A SRINIDHI/Downloads/day.csv")
 ### install package 'ggplot2' for histogram and box plot
@@ -81,3 +86,18 @@ summary(mod4)
 library(MASS)
 step.model=stepAIC(mod4,direction="both")
 summary(step.model)
+**
+Conclusion:
+After checking for :
+1. Model assumptions (normality, homoscedasticity and independence)
+2. Outliers
+3. Multicollinearity
+Removing redundant predictors with stepwise regression
+We obtained 11 significant predictors impacting response variable they are:
+Season 2, Season 3, Season 4, workingday 1, yr 1, holiday 1, weathersit 2, weathersit 3, atemp, windspeed,
+humidity.
+R
+2
+and Adj R2
+values are 0.825 and 0.822 respectively indicating strong adequacy.
+As the p-value of F-test is less than 0.05 overall model is significant.
